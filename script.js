@@ -28,7 +28,7 @@ class Factory {
       console.log("Building " + quantity + " " + options.color + " " + options.trim + " " + options.model + "'s'" );
     }
     customerBuild (color, options) {
-      console.log("Building one " + color + " " + options.trim + " " + options.model + " with the following options " + options);
+      console.log("Building one " + color + " " + options.trim + " " + options.model + " with the following options " + options + ".");
     }
 
 }
@@ -144,7 +144,7 @@ mazda3.massBuild(35000, mazda3)
 // Write your code below:
 
 
-mazda3.customerBuild("yellow", ["weather package ", "satellite radio ", "rear spoiler."])
+mazda3.customerBuild("yellow", [" weather package", " satellite radio", " rear spoiler"])
 
 
 // MIATA-RF MASS PRODUCTION
@@ -176,16 +176,13 @@ console.log(miataRf);
 // It should print: "Building 15000 Red Grand Touring Miata-RF's."
 // Write your code below:
 
-// TODO:
-
-
+miataRf.massBuild(15000, miataRf)
 
 // Print miataRf, calling customerBuild(), building one black Miata-Rf with the following options, as an array: hid headlights, sports suspension, leather steering wheel, heated seats, adaptive cruise control.
 // It should read: "Building one black Grand Touring Miata-RF with the following options: hid headlights, sports suspension, leather steering wheel, heated seats, adaptive cruise control"
 // Write your code below:
 
-
-
+miataRf.customerBuild("black", [" hid headlights ", " sports suspension ", " leather steering wheel", " heated seats", " adaptive cruise control"])
 
 // TRAIL BLAZER MASS PRODUCTION
 // The Trail Blazer should inherit from truck.
@@ -216,10 +213,10 @@ console.log(trailBlazer);
 // It should print: "Building 35000 blue Sport Trail Blazer's."
 // Wrint your code below:
 
-
-
-
+trailBlazer.massBuild(35000, trailBlazer)
 
 // Print trailBlazer, calling customerBuild(). It should build a red Trail Blazer with the following options, as an array: seat warmers, tinted windows, fog lamps.
 // It should print: "Building one red Sport Trail Blazer with the following options: seat warmers, tinted windows, fog lamps"
 // Write your code below:
+
+trailBlazer.customerBuild("red", [" seat warmers", " tinted windows", " fog lamps"])
