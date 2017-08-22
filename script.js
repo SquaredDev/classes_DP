@@ -28,7 +28,7 @@ class Factory {
       console.log("Building " + quantity + " " + options.color + " " + options.trim + " " + options.model + "'s'" );
     }
     customerBuild (color, options) {
-      console.log("Building one " + color + " " + options.trim + " " + options.model + " with the following options " + options + ".");
+      console.log("Building one " + color + " " + this.trim + " " + this.model + " with the following options " + options + ".");
     }
 
 }
