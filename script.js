@@ -24,6 +24,13 @@ class Factory {
     this.abs = true
     this.warranty = "60,000 miles / 3 years"
   }
+    massBuild (quantity, options) {
+      console.log("Building " + quantity + " " + options.color + " " + options.trim + " " + options.model + "'s'" );
+    }
+    customerBuild (color, options) {
+      console.log("Building one " + color + " " + options.trim + " " + options.model + " with the following options " + options);
+    }
+
 }
 
 
@@ -34,7 +41,25 @@ class Factory {
 // Car should also have the following additional properties: enginesize (4), navigation (true), backupcamera (true), warranty (100,000 miles / 5 years)
 // Write your code below:
 
-
+class Car extends Factory {
+  constructor() {
+    super()
+    this.model
+    this.doors
+    this.color
+    this.enginetype
+    this.transmission
+    this.trim
+    this.wheelstrim
+    this.audio
+    this.seatstrim
+    this.moonroof
+    this.enginesize = 4
+    this.navigation = true
+    this.backupcamera = true
+    this.warranty = "100,000 miles / 5 years"
+  }
+}
 
 
 // CREATE A SUB-CLASS CALLED SPORT
@@ -42,6 +67,17 @@ class Factory {
 // The constructor should have the following properties: model, trim, transmission, top, color, seatstrim, audio, wheelstrim. The values should be specified when creating an instance of Sport.
 // Sports cars should also have the following additional properties: moonroof (false), enginetype (gasoline), convertible (true), doors (2)
 // Write your code below:
+
+class Sport extends Car {
+  constructor() {
+    super()
+    this.top
+    this.moonroof = false
+    this.enginetype = "gasoline"
+    this.convertible = true
+    this.doors = 2
+  }
+}
 
 
 
@@ -54,7 +90,21 @@ class Factory {
 // It should also inherit the warranty property so we can extend it to: 150,000 miles / 6 years.
 // Write your code below:
 
-
+class Truck extends Factory {
+  constructor() {
+    super()
+    this.model
+    this.color
+    this.enginesize
+    this.hitch
+    this.bed
+    this.navigation
+    this.standard = {
+      backupcamera: true, audio: "basic",
+    }
+    this.warranty = "150,000 miles / 6 years"
+  }
+}
 
 
 // LET'S BUILD SOME CARS AND TRUCKS!
@@ -65,19 +115,27 @@ class Factory {
 
 // Write your 'mazda3' instance below:
 
+let mazda3 = new Car
+  mazda3.model = "mazda3"
+  mazda3.color = "red"
+  mazda3.enginetype = "hybrid"
+  mazda3.transmission = "automatic"
+  mazda3.trim = "touring"
+  mazda3.wheelstrim = "base"
+  mazda3.audio = "premium"
+  mazda3.seats = "leather"
+  mazda3.moonroof = true
 
 // Print mazda3. I should have all the above properties.
 // Write your code below:
 
-
-
-
+console.log(mazda3);
 
 // Print calling massBuild(), building 35000 cars.
 // It should print: "Building 35000 Red Touring Mazda3's."
 // Write your code below:
 
-
+mazda3.massBuild(35000, mazda3)
 
 
 
@@ -86,7 +144,7 @@ class Factory {
 // Write your code below:
 
 
-
+mazda3.customerBuild("yellow", ["weather package ", "satellite radio ", "rear spoiler."])
 
 
 // MIATA-RF MASS PRODUCTION
@@ -96,14 +154,21 @@ class Factory {
 // Write your 'miataRf' instance below:
 // Write your code below:
 
+let miataRf = new Sport
 
-
-
+miataRf.model = "Miata-RF"
+miataRf.trim = "Grand Touring"
+miataRf.transmission = "manual"
+miataRf.top = "hard top"
+miataRf.color = "Red"
+miataRf.seats = "leather"
+miataRf.audio = "premium"
+miataRf.wheels = "premium"
 
 // Print miataRf. It should have all of the above properties. Plus, the extended warranty.
 // Write your code below:
 
-
+console.log(miataRf);
 
 
 
@@ -111,7 +176,7 @@ class Factory {
 // It should print: "Building 15000 Red Grand Touring Miata-RF's."
 // Write your code below:
 
-
+// TODO:
 
 
 
@@ -129,14 +194,22 @@ class Factory {
 // Write your 'trailBlazer' instance below:
 // Write your code below:
 
+let trailBlazer = new Truck
 
+trailBlazer.model = "Trail Blazer"
+trailBlazer.color = "blue"
+trailBlazer.trim = "Sport"
+trailBlazer.enginesize = 8
+trailBlazer.hitch = true
+trailBlazer.bed = "standard"
+trailBlazer.doors = 2
 
 
 
 // Print trailBlazer. It should have all the above properties. Plus, the extended warranty.
 // Write your code below:
 
-
+console.log(trailBlazer);
 
 
 // Print trailBlazer, calling massBuid(). It should build 35000 trucks.
